@@ -6,8 +6,6 @@ public class Calc {
         boolean needToPlus = exp.contains("+");
         boolean needToMinus = exp.contains("-");
 
-        String[] bits = null;
-
         if (needToPlus) {
             bits = exp.split(" \\+ ");
         } else if (needToMinus) {
@@ -17,7 +15,6 @@ public class Calc {
         int a = Integer.parseInt(bits[0]);
         int b = Integer.parseInt(bits[1]);
 
-        return a + b;
         if (needToPlus) {
             return a + b;
         } else if (needToMinus) {
