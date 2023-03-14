@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 public class Calc {
     public static int run(String exp) {
         // 단일항이 입력되면 바로 리턴
+        exp = stripOuterBrackets(exp);
         if ( !exp.contains(" ") ) return Integer.parseInt(exp);
 
         boolean needToMulti = exp.contains(" * ");
@@ -49,5 +50,12 @@ public class Calc {
         }
 
         throw new RuntimeException("올바른 계산식이 아닙니다.");
+    }
+    private static String stripOuterBrackets(String exp) {
+        if ( exp.charAt(0) == '(' && exp.charAt(exp.length() - 1) == ')' ) {
+            exp = exp.substring(1, exp.length() - 1);
+        }
+
+        return exp;
     }
 }
