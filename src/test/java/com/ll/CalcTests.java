@@ -3,12 +3,11 @@ package com.ll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CalcTests {
-
     @Test
-    @DisplayName("1+1=2")
+    @DisplayName("1 + 1 == 2")
     void t1() {
         assertThat(Calc.run("1 + 1")).isEqualTo(2);
     }
@@ -108,5 +107,4 @@ public class CalcTests {
     void t17() {
         assertThat(Calc.run("10 * 20 + 10 + 5 * 2")).isEqualTo(220);
     }
-
 }
